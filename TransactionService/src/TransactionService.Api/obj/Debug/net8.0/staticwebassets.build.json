@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Pbg7mCUHyqdBtetB8zyBbxyYkAavslYV5ejlljpKf8w=",
+  "Source": "TransactionService.Api",
+  "BasePath": "_content/TransactionService.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

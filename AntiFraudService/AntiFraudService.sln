@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{169B048E-AFC6-4BCC-9401-6D2E15A32BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntiFraudService.Api", "src\AntiFraudService.Api\AntiFraudService.Api.csproj", "{9B80F45C-783E-487C-BAE9-1195E909D22C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntiFraudService.Application", "src\AntiFraudService.Application\AntiFraudService.Application.csproj", "{0C00E8A5-5931-405F-9828-2D26470DE6F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntiFraudService.Domain", "src\AntiFraudService.Domain\AntiFraudService.Domain.csproj", "{97626F76-21A9-477B-9098-83295D2F8B27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntiFraudService.Infrastructure", "src\AntiFraudService.Infrastructure\AntiFraudService.Infrastructure.csproj", "{4FB25C99-A281-4D7D-AE09-7FDE18CF6398}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CA405AFF-7DD5-45A5-B925-08380E88D0DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntiFraudService.UnitTests", "tests\AntiFraudService.UnitTests\AntiFraudService.UnitTests.csproj", "{4161C18B-B42C-4E92-AEC8-7AD230B502B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B80F45C-783E-487C-BAE9-1195E909D22C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B80F45C-783E-487C-BAE9-1195E909D22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B80F45C-783E-487C-BAE9-1195E909D22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B80F45C-783E-487C-BAE9-1195E909D22C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C00E8A5-5931-405F-9828-2D26470DE6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C00E8A5-5931-405F-9828-2D26470DE6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C00E8A5-5931-405F-9828-2D26470DE6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C00E8A5-5931-405F-9828-2D26470DE6F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97626F76-21A9-477B-9098-83295D2F8B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97626F76-21A9-477B-9098-83295D2F8B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97626F76-21A9-477B-9098-83295D2F8B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97626F76-21A9-477B-9098-83295D2F8B27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FB25C99-A281-4D7D-AE09-7FDE18CF6398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FB25C99-A281-4D7D-AE09-7FDE18CF6398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FB25C99-A281-4D7D-AE09-7FDE18CF6398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FB25C99-A281-4D7D-AE09-7FDE18CF6398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4161C18B-B42C-4E92-AEC8-7AD230B502B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4161C18B-B42C-4E92-AEC8-7AD230B502B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4161C18B-B42C-4E92-AEC8-7AD230B502B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4161C18B-B42C-4E92-AEC8-7AD230B502B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B80F45C-783E-487C-BAE9-1195E909D22C} = {169B048E-AFC6-4BCC-9401-6D2E15A32BDF}
+		{0C00E8A5-5931-405F-9828-2D26470DE6F2} = {169B048E-AFC6-4BCC-9401-6D2E15A32BDF}
+		{97626F76-21A9-477B-9098-83295D2F8B27} = {169B048E-AFC6-4BCC-9401-6D2E15A32BDF}
+		{4FB25C99-A281-4D7D-AE09-7FDE18CF6398} = {169B048E-AFC6-4BCC-9401-6D2E15A32BDF}
+		{4161C18B-B42C-4E92-AEC8-7AD230B502B8} = {CA405AFF-7DD5-45A5-B925-08380E88D0DA}
+	EndGlobalSection
+EndGlobal
