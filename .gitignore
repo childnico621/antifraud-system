@@ -3,6 +3,16 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Build folders
+**/bin/
+**/obj/
+
+# IDEs
+.vscode/
+.idea/
+
+
+
 # User-specific files
 *.rsuser
 *.suo
