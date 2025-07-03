@@ -2,7 +2,7 @@ services:
   transaction-service:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: TransactionService/Dockerfile
     ports:
       - "5000:8080"
     depends_on:
@@ -13,3 +13,12 @@ services:
       - ConnectionStrings__Postgres=Host=localhost;Port=5432;Database=transactions;Username=postgres;Password=postgres
       - Kafka__BootstrapServers=localhost
       - Kafka__Port=9092
+
+  antifraud-worker:
+    build:
+      context: .
+      dockerfile: AntiFraudService/Dockerfile
+    depends_on:
+      - kafka
+    environment:
+      - DOTNET_ENVIRONMENT=Development

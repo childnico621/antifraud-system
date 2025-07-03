@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-AntiFraudService.Worker-5ee76b5b-7e43-4062-a3a8-bd956b8e33ed</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.10.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AntiFraudService.Application\AntiFraudService.Application.csproj" />
+    <ProjectReference Include="..\AntiFraudService.Domain\AntiFraudService.Domain.csproj" />
+    <ProjectReference Include="..\AntiFraudService.Infrastructure\AntiFraudService.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
