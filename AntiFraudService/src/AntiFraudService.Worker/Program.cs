@@ -14,6 +14,7 @@ builder.Services.AddHostedService<KafkaTransactionConsumer>();
 builder.Services.AddScoped<EvaluateTransactionUseCase>();
 builder.Services.AddScoped<IFraudDetectorService, FraudDetectorService>();
 builder.Services.AddHttpClient<ITransactionQueryPort, TransactionQueryAdapter>();
+builder.Services.AddScoped<ITransactionCommandPort, TransactionCommandAdapter>();
 
 
 builder.Services.AddHostedService<Worker>();

@@ -6,6 +6,7 @@ using TransactionService.Infrastructure.Messaging;
 using Microsoft.EntityFrameworkCore;
 using Confluent.Kafka;
 using TransactionService.Application.UseCases.UpdateTransactionStatus;
+using TransactionService.Application.UseCases.GetDailyTotal;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICreateTransactionUseCase, CreateTransactionUseCase>();
 builder.Services.AddScoped<IGetTransactionByIdUseCase, GetTransactionByIdUseCase>();
 builder.Services.AddScoped<IUpdateTransactionStatusUseCase, UpdateTransactionStatusUseCase>();
+builder.Services.AddScoped<IGetDailyTotalUseCase, GetDailyTotalUseCase>();
 
 // Puerto de salida (infraestructura)
 builder.Services.AddSingleton<IProducer<Null, string>>(sp =>

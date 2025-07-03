@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TransactionService.Application.DTOs;
 using TransactionService.Application.UseCases.CreateTransaction;
+using TransactionService.Application.UseCases.GetDailyTotal;
 using TransactionService.Application.UseCases.GetTransactionById;
 using TransactionService.Application.UseCases.UpdateTransactionStatus;
 
@@ -14,12 +15,18 @@ namespace TransactionService.Api.Controllers
         private readonly IGetTransactionByIdUseCase _getUseCase;
 
         private readonly IUpdateTransactionStatusUseCase _updateUseCase;
+        private readonly IGetDailyTotalUseCase _getDailyTotalUseCase;
 
-        public TransactionController(ICreateTransactionUseCase createUseCase, IGetTransactionByIdUseCase getUseCase, IUpdateTransactionStatusUseCase updateUseCase)
+        public TransactionController(
+            ICreateTransactionUseCase createUseCase,
+            IGetTransactionByIdUseCase getUseCase,
+            IUpdateTransactionStatusUseCase updateUseCase,
+            IGetDailyTotalUseCase getDailyTotalUseCase)
         {
             _createUseCase = createUseCase;
             _getUseCase = getUseCase;
             _updateUseCase = updateUseCase;
+            _getDailyTotalUseCase = getDailyTotalUseCase;
         }
 
         /// <summary>
@@ -60,6 +67,19 @@ namespace TransactionService.Api.Controllers
                 return BadRequest("El estado proporcionado no es válido.");
 
             return NoContent();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sourceAccountId"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        [HttpGet("daily-total")]
+        public async Task<ActionResult<decimal>> GetDailyTotal([FromQuery] Guid sourceAccountId, [FromQuery] DateTime date)
+        {
+            var total = await _getDailyTotalUseCase.ExecuteAsync(sourceAccountId, date);
+            return Ok(new { total });
         }
 
     }

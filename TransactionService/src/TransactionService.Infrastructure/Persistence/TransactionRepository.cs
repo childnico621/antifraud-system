@@ -37,7 +37,8 @@ namespace TransactionService.Infrastructure.Persistence
 
         public async Task<decimal> GetDailyAccumulatedValueAsync(Guid sourceAccountId, DateTime date)
         {
-            var start = date.Date;
+            var utcDate = DateTime.SpecifyKind(date.Date, DateTimeKind.Utc);
+            var start = utcDate;
             var end = start.AddDays(1);
 
             return await _context.Transactions
