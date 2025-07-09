@@ -1,0 +1,47 @@
+---
+config:
+  theme: neo
+  layout: fixed
+---
+flowchart TD
+ subgraph Endpoints["Endpoints"]
+        CreateTx["POST /transactions"]
+        GetTx["GET /transactions/{id}"]
+        GetTotal["GET /transactions/daily-total"]
+        UpdateStatus["PUT /transactions/{id}/status"]
+  end
+ subgraph TransactionService["TransactionService"]
+        Endpoints
+        TApi["API REST"]
+        UseCases["UseCases"]
+        Db[("PostgreSQL")]
+        KafkaPub["Kafka Publisher"]
+  end
+ subgraph Kafka["Kafka"]
+        KafkaTopic["Topic: transaction_created"]
+  end
+ subgraph AntiFraudService["AntiFraudService"]
+        Worker["Kafka Consumer Worker"]
+        EvaluateUseCase["EvaluateTransactionUseCase"]
+        FraudService["FraudDetectorService"]
+        QueryPort["TransactionQueryPort"]
+        CommandPort["TransactionCommandPort"]
+        HttpClientQuery["HTTP Client (GET daily total)"]
+        HttpClientCommand["HTTP Client (PUT update status)"]
+  end
+    Client["Client"] --> CreateTx & GetTx
+    CreateTx --> TApi
+    GetTx --> TApi
+    GetTotal --> TApi
+    UpdateStatus --> TApi
+    TApi --> UseCases
+    UseCases --> Db & KafkaPub
+    KafkaPub --> KafkaTopic
+    KafkaTopic --> Worker
+    Worker --> EvaluateUseCase
+    EvaluateUseCase --> FraudService & CommandPort
+    FraudService --> QueryPort
+    QueryPort --> HttpClientQuery
+    HttpClientQuery --> GetTotal
+    CommandPort --> HttpClientCommand
+    HttpClientCommand --> UpdateStatus
